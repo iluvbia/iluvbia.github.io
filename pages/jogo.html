@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>capture os corações</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .screen{ justify-content: flex-start; padding-top: 6vh; }
+  .progress-wrap{ width: 100%; max-width: 340px; margin-bottom: 6px; }
+  .progress-track{ position: relative; height: 1px; background: var(--line); width: 100%; }
+  .progress-fill{ position: absolute; left: 0; top: 0; height: 1px; background: var(--accent); width: 0%; transition: width 0.3s ease; }
+  .progress-label{ font-size: 12px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 40px; }
+  #game-area{
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 46vh;
+    min-height: 320px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    cursor: none;
+    touch-action: none;
+  }
+  .heart{ position: absolute; width: 22px; height: 22px; top: -30px; color: var(--accent); pointer-events: none; }
+  .heart svg{ width: 100%; height: 100%; display:block; }
+  .catcher{
+    position: absolute;
+    bottom: 24px;
+    width: 64px;
+    height: 1px;
+    background: var(--ink);
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+  .catcher::before{
+    content:'';
+    position:absolute;
+    left:50%; top:50%;
+    width:6px; height:6px;
+    border-radius:50%;
+    background: var(--accent);
+    transform: translate(-50%,-50%);
+  }
+  .game-hint{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="screen">
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="progress-label" id="progress-label">0 de 10</div>
+    <div id="game-area"></div>
+    <p class="game-hint">mova o dedo para capturar os corações</p>
+  </div>
+
+  <script src="../js/game.js"></script>
+</body>
+</html>
