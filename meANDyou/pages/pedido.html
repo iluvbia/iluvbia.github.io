@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>uma pergunta importante</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .heart-mark{ width: 34px; height: 34px; color: var(--accent); margin-bottom: 28px; }
+  .choices{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    height: 60px;
+    width: 100%;
+  }
+  #no-btn{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.15s ease;
+  }
+</style>
+</head>
+<body>
+
+  <div class="screen">
+    <div class="heart-mark">
+      <svg viewBox="0 0 32 29" fill="none"><path d="M16 28C16 28 1 18.5 1 8.8C1 3.9 4.9 1 8.9 1C12 1 14.6 2.8 16 5.6C17.4 2.8 20 1 23.1 1C27.1 1 31 3.9 31 8.8C31 18.5 16 28 16 28Z" stroke="currentColor" stroke-width="1.4"/></svg>
+    </div>
+    <h1>você quer namorar comigo?</h1>
+    <div class="choices">
+      <button class="primary" id="yes-btn">sim</button>
+      <button id="no-btn">não</button>
+    </div>
+  </div>
+
+  <script src="../js/pedido.js"></script>
+</body>
+</html>
